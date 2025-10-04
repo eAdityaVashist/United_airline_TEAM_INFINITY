@@ -1,32 +1,103 @@
-# United_airline_TEAM_INFINITY
-United Airlines Flight Difficulty Analysis
+# ✈️ United Airlines Flight Difficulty Analysis  
+### Team Infinity  
 
-Project Overview:
-This project analyzes United Airlines flight data to compute a Flight Difficulty Score for each flight and classify flights into difficulty categories (Easy, Medium, Difficult). The goal is to identify patterns in flight delays, passenger load, special service requests (SSRs), and other operational factors that influence flight difficulty.
+---
 
-Dataset:
-The project uses multiple datasets stored in the Data/ folder:
-Airports Data: Contains airport codes and country codes.
-Bags Data: Contains baggage information, including transfer and checked bags.
-Flights Data: Contains flight schedules, departure and arrival times, ground times, total seats, fleet type, and carrier.
-PNR Flight Data: Contains passenger reservation details including total passengers, children, basic economy, strollers, and lap children.
-PNR Remarks: Contains special service requests (SSRs) associated with passenger records.
+##  Introduction  
 
-Analysis Steps:
-Data Loading & Cleaning: Loaded all datasets, converted date/time columns, and handled missing values.
-Feature Engineering: Calculated flight delays, passenger metrics, transfer-to-checked bag ratio, tight ground time flags, SSR counts, and Flight Difficulty Score.
-Difficulty Classification: Ranked flights daily by difficulty score and classified top 20% as Difficult, middle 60% as Medium, and bottom 20% as Easy.
-Exploratory Data Analysis: Analyzed distribution of difficulty scores, top difficult flights, and top difficult destinations.
-Correlation Analysis: Evaluated relationships between Flight Difficulty Score and features like passenger count, delay, tight ground time, SSR count, and bag transfer ratio.
+**Customer:** “My flight to Brussels got delayed again! Is this route always this chaotic?”  
+**Aditya (Future UA Employee):** “It’s not just bad luck — some flights are naturally harder to manage. Too many transfers, tight schedules, or special requests can make them tricky.”  
+**Customer:** “So… you can actually measure how difficult a flight is?”  
+**Anshul (Future UA Employee):** “That’s what we’re trying to figure out.”  
 
-Visualizations: Generated histograms, bar charts, and other plots to visualize flight difficulty distribution, top difficult flights, and difficult destinations.
+This project was born from that very question — *can we quantify flight difficulty?*  
 
-Key Insights:
-Most flights have low difficulty scores, with few highly difficult flights.
-Certain destinations consistently have higher average flight difficulty.
-Passenger count, tight ground time, transfer-to-checked bag ratio, and SSR counts are strongly correlated with flight difficulty.
+---
 
-Usage:
-Open the notebooks sequentially to reproduce the analysis.
-Ensure the Data/ folder containing all CSV files is in the same directory as the notebooks.
-Libraries required: pandas, numpy, matplotlib, seaborn.
+## Project Overview  
+
+United Airlines operates thousands of flights every day, each with varying levels of operational complexity.  
+This project introduces the **Flight Difficulty Score (FDS)** — a composite metric that measures how challenging a flight is to operate, based on multiple real-world parameters like:  
+
+- Delays and ground time  
+- Passenger and baggage load  
+- Special Service Requests (SSRs)  
+- Transfer-to-checked bag ratios  
+
+By analyzing these factors, we classify each flight as **Easy**, **Medium**, or **Difficult** — helping airlines optimize operations, resource allocation, and scheduling.  
+
+---
+
+##  Dataset Description  
+
+All datasets used are stored in the `Data/` folder.  
+
+| Dataset | Description |
+|----------|-------------|
+| **Airports Data** | Airport and country codes |
+| **Bags Data** | Transfer and checked baggage details |
+| **Flights Data** | Flight schedules, delays, fleet, and carrier |
+| **PNR Flight Data** | Passenger details (children, lap infants, etc.) |
+| **PNR Remark Data** | Special Service Requests (SSRs) linked to each passenger |
+
+---
+
+##  Analysis Pipeline  
+
+1. **Data Loading & Cleaning**  
+   - Imported and merged all datasets  
+   - Converted date/time columns  
+   - Handled missing and inconsistent data  
+
+2. **Feature Engineering**  
+   - Calculated new features: delay duration, passenger ratios, ground time flags, SSR counts  
+   - Computed a custom **Flight Difficulty Score (FDS)**  
+
+3. **Difficulty Classification**  
+   - Ranked flights by daily FDS  
+   - Top 20% → **Difficult**  
+   - Middle 60% → **Medium**  
+   - Bottom 20% → **Easy**  
+
+4. **Exploratory Data Analysis (EDA)**  
+   - Distribution of FDS  
+   - Top 10 most difficult flights  
+   - Difficult destinations  
+
+5. **Correlation Analysis**  
+   - Found relationships between FDS and features like passenger count, delay, SSRs, and baggage ratios  
+
+---
+
+##  Visualizations  
+
+- Histograms showing FDS distribution  
+- Bar charts for Top 10 Difficult Flights and Destinations  
+- Correlation heatmaps for operational insights  
+
+---
+
+##  Key Insights  
+
+- Most flights have low difficulty scores, with few highly difficult outliers  
+- Certain destinations consistently have higher average difficulty  
+- Strong correlation observed between:  
+  - Passenger count and difficulty  
+  - Tight ground time and delay rate  
+  - SSR count and overall complexity  
+
+---
+
+##  Tech Stack  
+
+- **Python**  
+- **pandas**, **numpy**, **matplotlib**, **seaborn**  
+- Jupyter Notebook  
+
+---
+
+##  Usage  
+
+1. Clone this repository:  
+   ```bash
+   git clone https://github.com/<your-username>/United_airline_TEAM_INFINITY.git
