@@ -100,4 +100,4 @@ All datasets used are stored in the `Data/` folder.
 
 1. Clone this repository:  
    ```bash
-   git clone https://github.com/<your-username>/United_airline_TEAM_INFINITY.git
+   git clone https://github.com/https://github.com/eAdityaVashist/United_airline_TEAM_INFINITY.git
